@@ -1,0 +1,114 @@
+<html>
+<head>
+    <script type="module">
+
+        // Import the functions you need from the SDKs you need
+      
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+      
+        // TODO: Add SDKs for Firebase products that you want to use
+      
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+      
+        // Your web app's Firebase configuration
+      
+        const firebaseConfig = {
+      
+          apiKey: "AIzaSyAWte5P3xTfVhzmLiPo807mm1gJPEK4Pak",
+      
+          authDomain: "notas-6394e.firebaseapp.com",
+      
+          projectId: "notas-6394e",
+      
+          storageBucket: "notas-6394e.appspot.com",
+      
+          messagingSenderId: "816791290252",
+      
+          appId: "1:816791290252:web:4d3700263260bbb16fd6a9"
+      
+        };
+      
+      
+        // Initialize Firebase
+      
+        window.app = initializeApp(firebaseConfig);
+      
+      </script>
+</head>
+<body>
+    <header>
+        <h1>Repositorio de Programación Orientada a Objetos</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Tutoriales</a></li>
+                <li><a href="#">Ejemplos de Código</a></li>
+                <li><a href="#">Recursos</a></li>
+                <li><a href="#">Acerca de</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Bienvenido al Repositorio</h2>
+            <p>En nuestro repositorio de programación orientada a objetos, encontrarás recursos valiosos para aprender y mejorar tus habilidades en programación orientada a objetos.</p>
+        </section>
+
+        <section>
+            <h2>Tutoriales Recientes</h2>
+            <ul>
+                <li><a href="#">Introducción a la POO</a></li>
+                <li><a href="#">Herencia y Polimorfismo</a></li>
+                <li><a href="#">Encapsulamiento y Abstracción</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Ejemplos de Código</h2>
+            <p>Explora ejemplos de código fuente que demuestran conceptos de programación orientada a objetos en acción.</p>
+        </section>
+
+        <section>
+            <h2>Recursos Adicionales</h2>
+            <p>Encuentra enlaces a libros, cursos en línea y otras fuentes de información para ampliar tus conocimientos en POO.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Repositorio de Programación Orientada a Objetos creado en la universidad del caribe</p>
+    </footer>
+<h1>Cities:</h1>
+<ul id="cities-list"></ul>
+<button id="load-cities-list">Cargar</button>
+
+<script type="module">
+    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+
+    // Get a list of cities from your database
+    async function getCities() {
+        const db = getFirestore(app);
+        const citiesCol = collection(db, 'cities');
+        const citySnapshot = await getDocs(citiesCol);
+        const cityList = citySnapshot.docs.map(doc => doc.data());
+        return cityList;
+    }
+
+    const list = document.getElementById("cities-list");
+    const loadCitiesButton = document.getElementById("load-cities-list");
+    loadCitiesButton.addEventListener("click", function()
+    {
+        getCities().then(function(cities)
+        {
+            for (let city of cities) {
+                const listRow = document.createElement("li");
+                listRow.textContent = JSON.stringify(city);
+                list.appendChild(listRow);
+            }
+        });
+    });
+   
+</script>
+</body>
+</html>
