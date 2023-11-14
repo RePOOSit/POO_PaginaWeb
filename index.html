@@ -92,24 +92,67 @@
         const db = getFirestore(app);
         const citiesCol = collection(db, 'cities');
         const citySnapshot = await getDocs(citiesCol);
-        const cityList = citySnapshot.docs.map(doc => doc.data());
-        return cityList;
+        const notas = citySnapshot.docs.map(doc => doc.data());
+        return notas;
     }
 
-    const list = document.getElementById("cities-list");
-    const loadCitiesButton = document.getElementById("load-cities-list");
+    const list = document.getElementById("notas");
+    const loadCitiesButton = document.getElementById("load-notas");
     loadCitiesButton.addEventListener("click", function()
     {
         getCities().then(function(cities)
         {
-            for (let city of cities) {
+            for (let contenido of notas) {
                 const listRow = document.createElement("li");
                 listRow.textContent = JSON.stringify(city);
                 list.appendChild(listRow);
             }
         });
     });
-   
+
+</script>
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Agregar notas</h2>
+
+<form id="registroForm">
+  <label for="">titulo:</label><br>
+  <input type="text" id="titulo" name="titulo"><br>
+  <label for="contenido">contenido:</label><br>
+  <input type="text" id="contenido" name="contenido"><br>
+  <input type="submit" value="agregar">
+</form>
+
+<script type="module">
+    // esta madre es lo unico que ocupamos la neta
+    // Importa las funciones necesarias
+    import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+
+    // Inicializa Firestore
+    const db = getFirestore(app);
+
+    // Selecciona el formulario
+    const form = document.getElementById('registroForm');
+
+    form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        // Obtiene los valores del formulario
+        const titulo = document.getElementById('titulo').value;
+        const contenido = document.getElementById('contenido').value;
+
+        // Crea un nuevo documento en la colección 'notas'
+        await setDoc(doc(db, 'notas', titulo), {
+            titulo: titulo,
+            contenido: contenido
+        });
+
+        // Limpia el formulario
+        form.reset();
+    });
 </script>
 
 
