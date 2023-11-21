@@ -1,10 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    
-    <link rel="stylesheet" type="text/css" href="estilos.css">
-    <!-- Esta parte sirve para conectar el CSS con el HTML. de ahuevo debe estar en el head -->
-
-
     <script type="module">
 
         // Import the functions you need from the SDKs you need
@@ -33,129 +30,297 @@
         window.app = initializeApp(firebaseConfig);
       
       </script>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Sirve para generar las 3 rayitas que tenemos en el menu XD-->
+    <script src="https://kit.fontawesome.com/2cb25f2c39.js"></script>
+
+    <title>Programacion Orientado a objetos</title>
+    <!--Referencia al Style-->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+        <header>
+            <nav>
+                <div>
+                    <img src="images/logo.svg" alt="" class="logo">
+                </div>
+                <input type="checkbox" id="check">
+                <label for="check" class="bar-btn">
+                    <i class="fas fa-bars" ></i>
+                </label>
+                <ul class="nav-menu">
+                    <li><a class="activo" href="#">Inicio</a></li>
+                    <li><a href="#">Informacion de los cursos </a></li>
+                    <li><a href="#">Bloques</a></li>
+                    <li><a href="#">Requisitos</a></li>     
+                    <li><a href="#">Contacto</a></li>        
+                </ul>
+            </nav>
 
+            <div class="banner-text container">
+                <div class="text-header">
+                    <h1> <strong>Repositorio POO</strong> </h1>
+                    <p>El siguiente repositorio onlie esta pensado para
+                         poder rapsar algunos temas de programacion orientado a objetos. 
+                         El lenguaje que se utilizara para el siguiente repositorio es PYTHON</p>
+                    
+                    <a class="btn-a" href="#">Mas informacion</a>
 
+                </div>
 
-
-    <div class="menuSuperior">
-            <h1>PROGRAMACION ORIENTADO A OBJETOS</h1>    
-    </div>
-
-
-    <header>
-        <h2>Repositorio de Programación Orientada a Objetos</h2>
-        <nav>
-            <ul>
-                <li><a href="#">Introduccion a POO</a></li>
-                <li><a href="#">Ambiente de trabajo</a></li>
-                <li><a href="#">Logica de POO y aolicaciones</a></li>
-                <li><a href="#">Recursos</a></li>
-                <li><a href="#">Acerca de</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        
-        <section>
-            <h2>Tutoriales Recientes</h2>
-            <ul>
-                <li><a href="#">Ejercicios de practica</a></li>
-                <li><a href="#">Herencia y Polimorfismo</a></li>
-                <li><a href="#">Encapsulamiento y Abstracción</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Ejemplos de Código</h2>
-            <p>Explora ejemplos de código fuente que demuestran conceptos de programación orientada a objetos en acción.</p>
-        </section>
+                <div class="img-header">
+                    <img src="images/Asset 3.svg" alt="">
+                </div>
+            </div>
+        </header>
 
         <section>
-            <h2>Recursos Adicionales</h2>
-            <p>Encuentra enlaces a libros, cursos en línea y otras fuentes de información para ampliar tus conocimientos en POO.</p>
+            <div class="about container">
+                <h2>Sobre el curso</h2>
+                <p>Texto de relleno XD</p>
+                
+                <div class="icons-about">
+
+                    <div class="icon-about">
+                        <img src="images/icon-1.svg" alt="">
+                        <div class="icon-text">
+                            <h3>Almacen de datos sencillo</h3>
+                            <p>aña</p>
+                        </div>
+                    </div>
+
+                    <div class="icon-about">
+                        <img src="images/icon-2.svg" alt="">
+                        <div class="icon-text">
+                            <h3>Desarrollo de habilidades de programacion</h3>
+                            <p>aña</p>
+                        </div>
+                    </div>
+
+                    <div class="icon-about">
+                        <img src="images/icon-3.svg" alt="">
+                        <div class="icon-text">
+                            <h3>Mejora de comunicacion con el cliente</h3>
+                            <p>aña</p>
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+                <a class="btn-b" href="#">Mas Informacion</a> 
+
+            </div>
+
+
         </section>
-    </main>
+    
+        <main class="services">
+            <div class="container">
+                <div class="services-container">
 
-    <footer>
-        <p>&copy; 2023 Repositorio de Programación Orientada a Objetos creado en la universidad del caribe</p>
-    </footer>
-<ul id="cities-list"></ul>
+                    <div>
 
-<script type="module">
-    import { getFirestore, collection, getDocs } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+                        <div class="services-cards">
 
-    // Get a list of cities from your database
-    async function getCities() {
-        const db = getFirestore(app);
-        const citiesCol = collection(db, 'cities');
-        const citySnapshot = await getDocs(citiesCol);
-        const notas = citySnapshot.docs.map(doc => doc.data());
-        return notas;
-    }
+                            <div class="card">
+                                <img src="images/services-1.svg" alt="">
+                                <h2>Hola</h2>
+                                <p>Este es un tecto de prueba</p>
+                            </div>
+                            
+                            <div class="card">
+                                <img src="images/services-2.svg" alt="">
+                                <h2>Hola</h2>
+                                <p>Este es un tecto de prueba</p>
+                            </div>
+                            
+                        </div>
 
-    const list = document.getElementById("notas");
-    const loadCitiesButton = document.getElementById("load-notas");
-    loadCitiesButton.addEventListener("click", function()
-    {
-        getCities().then(function(cities)
-        {
-            for (let contenido of notas) {
-                const listRow = document.createElement("li");
-                listRow.textContent = JSON.stringify(city);
-                list.appendChild(listRow);
-            }
-        });
-    });
+                        
 
-</script>
+                        <div class="services-cards">
 
-<!DOCTYPE html>
-<html>
-<body>
+                            <div class="card">
+                                <img src="images/services-3.svg" alt="">
+                                <h2>Hola</h2>
+                                <p>Este es un tecto de prueba</p>
+                            </div>
+                            
+                            <div class="card">
+                                <img src="images/services-4.svg" alt="">
+                                <h2>Hola</h2>
+                                <p>Este es un tecto de prueba</p>
+                            </div>
+                            
+                        </div>
 
-<h2>Agregar notas</h2>
+                    </div>
 
-<form id="registroForm">
-  <label for="">titulo:</label><br>
-  <input type="text" id="titulo" name="titulo"><br>
-  <label for="contenido">contenido:</label><br>
-  <input type="text" id="contenido" name="contenido"><br>
-  <input type="submit" value="agregar">
-</form>
+                    <div class="services-txt">
+                        <h2>Servicio</h2>
+                        <p>mas informacion ekis</p>
 
-<script type="module">
-    // esta madre es lo unico que ocupamos la neta
-    // Importa las funciones necesarias
-    import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+                        <a class="btn-c" href="#">Contacto</a>
 
-    // Inicializa Firestore
-    const db = getFirestore(app);
+                    </div>
 
-    // Selecciona el formulario
-    const form = document.getElementById('registroForm');
-
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-
-        // Obtiene los valores del formulario
-        const titulo = document.getElementById('titulo').value;
-        const contenido = document.getElementById('contenido').value;
-
-        // Crea un nuevo documento en la colección 'notas'
-        await setDoc(doc(db, 'notas', titulo), {
-            titulo: titulo,
-            contenido: contenido
-        });
-
-        // Limpia el formulario
-        form.reset();
-    });
-</script>
+                </div>
+            </div>
 
 
+        </main>
+
+        <section class="portafolio">
+            <div class="container">
+                <div class="container-portafolio">
+                    <h2>portafolio</h2>
+                    <p class="p-txt">texto de prueba po</p>
+
+                    <div class="content-portafolio">
+                        <img class="img-01" src="images/portfolio-1.svg" alt="">
+                        <div class="txt-portafolio">
+                            <h3>Alv amigio aaaaa</h3>
+                            <p>mas mierda</p>
+                            <a class="btn-b" href="#">Mas informacion</a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="content-portafolio">
+                        <div class="txt-portafolio">
+                            <h3>BOTONSITO</h3>
+                            <p>aña</p>
+                            <a class="btn-b" href="#">Mas informacion</a>
+                        </div>
+                        <img class="img-02" src="images/portfolio-2.svg" alt="">
+                    </div>
+
+
+                    <div class="content-portafolio">
+                        <img class="img-03" src="images/portfolio-3.svg" alt="">
+                        <div class="txt-portafolio">
+                            <h3>Alv amigio aaaaa</h3>
+                            <p>mas mierda</p>
+                            <a class="btn-b" href="#">Mas informacion</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </section>
+
+        <footer class="footer">
+
+            <div class="footer-sec container">
+
+                <h2>Contactos</h2>
+                <p class="f-txt">En este repositorio van a aprender a desarrollar </p>
+
+           
+
+                <div class="content-footer">
+
+                    <div class="links">
+
+                        <div class="link">
+                            <h3>Enlaces</h3>
+                            <p>link de prueba</p>
+                            <p>link de prueba</p>
+                            <p>link de prueba</p>
+
+                        </div>
+
+                        <div class="link">
+                            <h3>Enlaces</h3>
+                            <p>link de prueba</p>
+                            <p>link de prueba</p>
+                            <p>link de prueba</p>
+
+                        </div>
+
+                        <div class="link">
+                            <h3>Enlaces</h3>
+                            <p>link </p>
+                            <p>---------</p>
+                            <p>---------</p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </footer>
+
+
+        <div>     
+            
+
+
+            <div class="ayuda">
+
+                <h2>Agregar notas</h2>
+
+                    <div>
+
+                        <form id="registroForm">
+                            <label for="titulo">Título:</label><br>
+                            <input type="text" id="titulo" name="titulo"><br>
+                        
+                            <label for="contenido">Contenido:</label><br>
+                            <input type="text" id="contenido" name="contenido"><br>
+                        
+                            <input type="submit" value="Agregar">
+                        </form>
+
+                    </div>
+                
+            </div>
+           
+ 
+            <script type="module">
+                // esta madre es lo unico que ocupamos la neta
+                // Importa las funciones necesarias
+                import { getFirestore, doc, setDoc } from 'https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js';
+            
+                // Inicializa Firestore
+                const db = getFirestore(app);
+            
+                // Selecciona el formulario
+                const form = document.getElementById('registroForm');
+            
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+            
+                    // Obtiene los valores del formulario
+                    const titulo = document.getElementById('titulo').value;
+                    const contenido = document.getElementById('contenido').value;
+            
+                    // Crea un nuevo documento en la colección 'notas'
+                    await setDoc(doc(db, 'notas', titulo), {
+                        titulo: titulo,
+                        contenido: contenido
+                    });
+            
+                    // Limpia el formulario
+                    form.reset();
+                });
+            </script>
+
+
+        </div>
+
+       
 
 </body>
 </html>
+
+
