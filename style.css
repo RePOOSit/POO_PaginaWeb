@@ -319,8 +319,9 @@ padding: 30px 0px;
 
 
 .ayuda {
+    color:rgb(255, 255, 255);
     text-align: center;
-    background-color: #ee4ccb;
+    background-color: #a23ada;
     padding: 20px;
     border-radius: 10px;
 }
@@ -344,7 +345,7 @@ input {
 }
 
 input[type="submit"] {
-    background-color: #984caf;
+    background-color: #7d3f90;
     color: white;
     cursor: pointer;
 }
