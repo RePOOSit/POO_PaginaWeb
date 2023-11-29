@@ -280,11 +280,6 @@
 
         <div>     
             
-
-
-            
-           
- 
             <script type="module">
                 // esta madre es lo unico que ocupamos la neta
                 // Importa las funciones necesarias
@@ -311,6 +306,35 @@
             
                     // Limpia el formulario
                     form.reset();
+                });
+            </script>
+
+            <article id="notasContainer"></article>
+
+            <script type="module">
+                // Importa las funciones necesarias
+                import { getFirestore, doc, setDoc, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+
+                // Inicializa Firestore
+                const db = getFirestore(app);
+
+                // Selecciona el contenedor donde se mostrarán las notas
+                const notasContainer = document.getElementById('notasContainer');
+
+                // Obtiene todas las notas
+                const querySnapshot = await getDocs(collection(db, 'notas'));
+
+                // Muestra todas las notas
+                querySnapshot.forEach((doc) => {
+                    // Crea un nuevo elemento para cada nota
+                    const notaElement = document.createElement('article');
+                    notaElement.innerHTML = `
+                        <h2>${doc.data().titulo}</h2>
+                        <p>${doc.data().contenido}</p>
+                    `;
+
+                    // Añade el elemento al contenedor
+                    notasContainer.appendChild(notaElement);
                 });
             </script>
 
