@@ -225,6 +225,11 @@ padding: 30px 0px;
     text-transform: uppercase;
 }
 
+.about h3{
+    font-size: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
 .about p {
 
     font-size: 18px;
@@ -242,12 +247,12 @@ padding: 30px 0px;
 
 .icon-about {
     display: flex;
-    margin: 20px 50px;
+    margin: 20px 20px;
 
 }
 
 .icon-about img {
-    width: 70px;
+    width: 80px;
 }
 
 .icon-text{
@@ -259,34 +264,9 @@ padding: 30px 0px;
     margin: 0px;
 }
 
-.btn-b{
-    display: inline-block;
-    margin-top: 20px;
-    background: linear-gradient(to bottom, rgb(162, 0, 255), rgb(230, 0, 235));
-    border-radius: 25px;
-    padding: 14px 25px;
-    color: aliceblue;
-}
 
-.btn-b:hover {
-    background: linear-gradient(to bottom, rgb(255, 0, 153), rgb(179, 0, 238));
-}
 
-@media (min-width: 750px){
 
-    .about{
-        padding:120px 0px;
-    }
-
-    .icons-about{
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .btn-b{
-        margin-top: 50px;
-    }
-}
 
 /*parte de los servicios */
 
@@ -308,30 +288,12 @@ padding: 30px 0px;
 
 .card {
     background-color: rgb(225, 203, 252);
-    width: 250px;
+    width: 450px;
     border-radius: 15px;
     margin: 0px 15px;
     padding: 20px 35px;
 }
 
-.services-txt {
-    margin-left: 0px;
-    text-align: center;
-}
-
-
-.services-txt h2 {
-    font-size: 40px;
-    text-transform: uppercase;
-    color: aliceblue;
-    margin-right: 15px;
-}
-
-.services-txt p {
-    font-size: 18px;
-    color: aliceblue;
-    margin-right: 0px;
-}
 
 @media (min-width: 760px){
     .services-container {
@@ -365,6 +327,29 @@ padding: 30px 0px;
     border-radius: 10px;
 }
 
+.title {
+    color:rgb(255, 255, 255);
+    text-align: center;
+    background-color: rgb(88, 14, 114);
+    padding: 10px;
+
+}
+
+.visualizar {
+    color:rgb(159, 191, 223);
+    text-align: center;
+    background-color: rgb(88, 14, 114);
+    padding: 20px;
+
+    margin-bottom: 200px;
+}
+
+.visualizar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+
 #registroForm {
     display: inline-block;
     text-align: left;
@@ -390,95 +375,7 @@ input[type="submit"] {
 }
     
 
-/*Portafolio */
 
-.portafolio {
-    padding:0%;
-}
-
-.container-portafolio{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.container-portafolio h2{
-
-    font-size: 45px;
-    margin-bottom: 20px;
-}
-
-.p-txt{
-    text-align: center;
-    margin: 0px 0px 30px 0px;
-}
-
-.content-portafolio{
-    display: flex;
-    text-align: center;
-    margin: 0px 0px 50px 0px;
-}
-
-
-
-.txt-portafolio {
-    align-self: center;
-
-}
-
-.txt-portafolio h3 {
-    font-size: 22px;
-    margin-bottom: 20px;
-}
-
-.txt-portafolio {
-    margin-bottom: 20px;
-}
-
-.txt-portafolio p {
-    margin-bottom: 20px;
-}
-
-
-@media (min-width: 750px){
-
-    .portafolio {
-    padding: 50px 0px;
-    }
-    .p-txt{
-        text-align: center;
-        margin: 0px 200px 70px 200px;
-    }
-
-    .container-portafolio {
-        margin-bottom: 40px;
-    }
-
-    .content-portafolio {
-        display: flex; 
-        text-align: left;
-        margin: 0px 150px 150px 150px;
-    }
-
-    .img-01 {
-
-        margin-right: 50px;
-        width: 250px;
-        }
-        
-        .img-02 {
-        
-            margin-right: 50px;
-            width: 300px;
-            }
-        
-        .img-03 {
-        
-        margin-right: 5px;
-        width: 300px;
-        }
-
-  }
 
   .footer {
     background-image: url(images/foot.svg);
@@ -501,6 +398,14 @@ input[type="submit"] {
     margin-bottom: 20px;
 }
 
+.footer-sec h3{
+    font-size: 20px;
+    color: aliceblue;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
 .f-txt{
     text-align: center;
     color: aliceblue;
@@ -518,8 +423,12 @@ input[type="submit"] {
 }
 
 .link {
-    color: aliceblue;
+    color: rgb(255, 255, 255);
     margin: 30px 30px 0px 0px;
+}
+
+.footer-sec a{
+    color: #be40e0;
 }
 
 @media (min-width: 750px){
